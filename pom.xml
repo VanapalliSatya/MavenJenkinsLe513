@@ -40,6 +40,22 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M5</version>
       </plugin>
+      <plugin>
+        <!-- Build an executable JAR -->
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-jar-plugin</artifactId>
+<version>3.1.0</version>
+<configuration>
+	<archive>
+		<manifest>
+			<addClasspath>true</addClasspath>
+			<!-- here we specify that we want to use the main method within the app class -->
+			<mainClass>MavenJenkins.App</mainClass>
+		</manifest>
+	</archive>
+</configuration>
+        </plugin>
+      </plugins>
     </plugins>
   </build>
 </project>
